@@ -1,0 +1,83 @@
+name: Build CV Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (e.g. v1.1)'
+        required: false
+        type: string
+
+env:
+  RESUME: Rozanov_Andrei_CV
+  LANGUAGES: ru en ko vi
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Determine version
+        id: version
+        run: |
+          VER="${{ github.event.inputs.version }}"
+          if [ -z "$VER" ]; then
+            if [ -f .VERSION ]; then
+              VER="$(cat .VERSION)"
+            else
+              VER="$(date +%Y.%m)-latest"
+            fi
+          fi
+          echo "version=$VER" >> "$GITHUB_OUTPUT"
+
+      - name: Install Typst
+        run: |
+          VER=$(curl -s https://api.github.com/repos/typst/typst/releases/latest | jq -r .tag_name)
+          curl -fsSL "https://github.com/typst/typst/releases/download/${VER}/typst-x86_64-unknown-linux-gnu.tar.xz" | \
+            tar -xJ -C "$HOME/.local/bin" typst
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          typst --version
+
+      - name: Build all languages
+        run: |
+          mkdir -p release
+          for lang in $LANGUAGES; do
+            echo "Building $lang..."
+            typst compile resume.typ "release/${RESUME}_${lang}.pdf" --root .
+          done
+          ls -lh release/
+
+      - name: Delete old release tag
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ steps.version.outputs.version }}"
+          gh release delete "$TAG" --cleanup-tag --yes 2>/dev/null || true
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ steps.version.outputs.version }}"
+          FILES=""
+          for lang in $LANGUAGES; do
+            f="release/${RESUME}_${lang}.pdf"
+            FILES="$FILES -a $f"
+          done
+          gh release create "$TAG" $FILES \
+            --title "$TAG - CV Resume" \
+            --notes "Languages: $(echo $LANGUAGES | tr ' ' ', ')"
+
+      - name: Upload workflow artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdfs
+          path: release/
+          retention-days: 7
