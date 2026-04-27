@@ -1,9 +1,8 @@
 // SPDX-FileCopyrightText: 2026 RAprogramm <andrey.rozanov.vl@gmail.com>
 // SPDX-License-Identifier: MIT
 
-// ── Change this one line to switch language: "ru" | "en" | "vi" | "ko" ─────
-#let lang = "ru"
-// ────────────────────────────────────────────────────────────────────────────
+// ── Language: read from --input lang=... with "ru" as fallback ─────────────
+#let lang = sys.inputs.at("lang", default: "en")
 
 #set page(paper: "a4", margin: (left: 14mm, right: 14mm, top: 14mm, bottom: 14mm))
 #set text(

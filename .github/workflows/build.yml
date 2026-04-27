@@ -46,6 +46,7 @@ jobs:
               -v "${{ github.workspace }}:/docs" \
               ghcr.io/typst/typst:latest \
               compile \
+                --input lang=$lang \
                 --root /docs \
                 /docs/resume.typ \
                 /docs/release/${RESUME}_${lang}.pdf
