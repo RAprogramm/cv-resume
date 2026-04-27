@@ -67,7 +67,7 @@ jobs:
           FILES=""
           for lang in $LANGUAGES; do
             f="release/${RESUME}_${lang}.pdf"
-            FILES="$FILES -a $f"
+            FILES="$FILES $f"
           done
           gh release create "$TAG" $FILES \
             --title "$TAG - CV Resume" \
