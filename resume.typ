@@ -94,7 +94,6 @@
     lng_en:       "Английский:", lng_en_v: "B2",
     lng_vi:       "Вьетнамский:", lng_vi_v: "базовый",
     lng_ko:       "Корейский:", lng_ko_v: "A1",
-    present:      "наст. время",
     footer:       "Резюме обновлено: ",
   ),
 
@@ -168,7 +167,6 @@
     lng_en:       "English:", lng_en_v: "B2",
     lng_vi:       "Vietnamese:", lng_vi_v: "basic",
     lng_ko:       "Korean:", lng_ko_v: "A1",
-    present:      "present",
     footer:       "Resume updated: ",
   ),
 
@@ -242,12 +240,11 @@
     lng_en:       "Tiếng Anh:", lng_en_v: "B2",
     lng_vi:       "Tiếng Việt:", lng_vi_v: "cơ bản",
     lng_ko:       "Tiếng Hàn:", lng_ko_v: "A1",
-    present:      "hiện tại",
     footer:       "Cập nhật: ",
   ),
 
   ko: (
-    name:         "Andrei Rozanov",
+    name:         "안드레이 로자노프",
     role:         "소프트웨어 엔지니어",
     location:     "베트남 · 원격 근무",
     s_about:      "소개",
@@ -316,7 +313,6 @@
     lng_en:       "영어:", lng_en_v: "B2",
     lng_vi:       "베트남어:", lng_vi_v: "기초",
     lng_ko:       "한국어:", lng_ko_v: "A1",
-    present:      "현재",
     footer:       "이력서 업데이트: ",
   ),
 )
@@ -417,7 +413,7 @@
 
 #section(t("s_exp"))
 
-#job(t("j_lead"), "QBD", "10/2024 — " + t("present"))
+#job(t("j_lead"), "QBD", "10/2024 — 01/2026")
 #v(0.2em)
 #text(size: 8.8pt, fill: slate)[#t("qbd_desc")]
 #v(0.25em)
