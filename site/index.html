@@ -221,9 +221,60 @@
     gap: 14px;
     margin-bottom: 46px;
   }
-  @media (min-width: 560px) {
-    .grid { grid-template-columns: 1fr 1fr; }
+  @media (min-width: 640px) {
+    .grid { grid-template-columns: repeat(3, 1fr); }
+    .card.featured { grid-column: 1 / -1; }
   }
+  .card.featured {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px 26px;
+    padding: 22px 22px 20px;
+    border-color: rgba(247, 76, 0, .38);
+  }
+  .card.featured > * { justify-self: start; }
+  .card.featured .peek { justify-self: stretch; }
+  @media (min-width: 640px) {
+    .card.featured {
+      grid-template-columns: 1fr 300px;
+      grid-template-rows: auto auto auto 1fr;
+      align-items: start;
+    }
+    .card.featured > * { justify-self: start; }
+    .card.featured .peek {
+      grid-column: 2;
+      grid-row: 1 / span 4;
+      justify-self: stretch;
+      align-self: stretch;
+      height: 100%;
+      min-height: 210px;
+      margin: 0;
+    }
+    .card.featured .native { margin-top: 10px; }
+    .card.featured .get { align-self: end; }
+  }
+  .card.featured .native { font-size: 24px; }
+  .card.featured .hint { font-size: 13px; margin-top: 6px; }
+  .card.featured .get { margin-top: 18px; font-size: 13px; }
+  .card.featured::before { font-size: 110px; right: 288px; }
+
+  /* detection banner */
+  .detect {
+    display: none;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--dim);
+    background: var(--bg-raise);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--rust);
+    border-radius: 10px;
+    padding: 10px 16px;
+    margin-bottom: 14px;
+  }
+  .detect.on { display: flex; }
+  .detect .ok { color: var(--green); font-weight: 700; }
+  .detect b { color: var(--rust-soft); font-weight: 700; }
   .card {
     position: relative;
     display: block;
@@ -370,29 +421,30 @@
 
   <section class="rise" style="animation-delay:.4s" aria-label="Resume downloads">
     <h2 class="sect"><b>01.</b> release assets — pick a language</h2>
-    <div class="grid">
-      <a class="card" data-code="EN" href="pdf/Rozanov_Andrei_CV_en.pdf">
+    <p class="detect" id="detect" aria-live="polite"></p>
+    <div class="grid" id="grid">
+      <a class="card" data-code="EN" data-lang="en" href="pdf/Rozanov_Andrei_CV_en.pdf">
         <span class="peek"><img src="thumbs/en.png" alt="" loading="lazy" width="380" height="120"></span>
         <span class="code">EN</span>
         <div class="native">English</div>
         <div class="hint">A4 · 2 pages · PDF</div>
         <div class="get">get cv --lang en</div>
       </a>
-      <a class="card" data-code="RU" href="pdf/Rozanov_Andrei_CV_ru.pdf">
+      <a class="card" data-code="RU" data-lang="ru" href="pdf/Rozanov_Andrei_CV_ru.pdf">
         <span class="peek"><img src="thumbs/ru.png" alt="" loading="lazy" width="380" height="120"></span>
         <span class="code">RU</span>
         <div class="native">Русский</div>
         <div class="hint">A4 · 2 страницы · PDF</div>
         <div class="get">get cv --lang ru</div>
       </a>
-      <a class="card" data-code="KO" href="pdf/Rozanov_Andrei_CV_ko.pdf">
+      <a class="card" data-code="KO" data-lang="ko" href="pdf/Rozanov_Andrei_CV_ko.pdf">
         <span class="peek"><img src="thumbs/ko.png" alt="" loading="lazy" width="380" height="120"></span>
         <span class="code">KO</span>
         <div class="native">한국어</div>
         <div class="hint">A4 · 2페이지 · PDF</div>
         <div class="get">get cv --lang ko</div>
       </a>
-      <a class="card" data-code="VI" href="pdf/Rozanov_Andrei_CV_vi.pdf">
+      <a class="card" data-code="VI" data-lang="vi" href="pdf/Rozanov_Andrei_CV_vi.pdf">
         <span class="peek"><img src="thumbs/vi.png" alt="" loading="lazy" width="380" height="120"></span>
         <span class="code">VI</span>
         <div class="native">Tiếng Việt</div>
@@ -422,6 +474,31 @@
 </main>
 
 <script>
+  (function () {
+    var SUPPORTED = ["en", "ru", "ko", "vi"];
+    var MSG = {
+      en: ['<span class="ok">Detected</span>', 'browser language <b>{code}</b> — featuring the English version'],
+      ru: ['<span class="ok">Определён</span>', 'язык браузера <b>{code}</b> — первой показана русская версия'],
+      ko: ['<span class="ok">감지됨</span>', '브라우저 언어 <b>{code}</b> — 한국어 버전을 먼저 표시합니다'],
+      vi: ['<span class="ok">Đã phát hiện</span>', 'ngôn ngữ trình duyệt <b>{code}</b> — hiển thị bản tiếng Việt trước']
+    };
+    var override = new URLSearchParams(location.search).get("lang");
+    var raw = override || (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+    var lang = raw.slice(0, 2).toLowerCase();
+    if (SUPPORTED.indexOf(lang) === -1) lang = "en";
+
+    var grid = document.getElementById("grid");
+    var card = grid.querySelector('[data-lang="' + lang + '"]');
+    if (card) {
+      card.classList.add("featured");
+      grid.prepend(card);
+    }
+    var banner = document.getElementById("detect");
+    var m = MSG[lang];
+    banner.innerHTML = m[0] + '<span>' + m[1].replace("{code}", raw) + '</span>';
+    banner.classList.add("on");
+  })();
+
   document.getElementById("year").textContent = new Date().getFullYear();
   fetch("https://api.github.com/repos/RAprogramm/cv-resume/releases/latest")
     .then(r => r.ok ? r.json() : null)
