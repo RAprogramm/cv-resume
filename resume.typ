@@ -390,24 +390,28 @@
 
 // ── Skills ────────────────────────────────────────────────────────────────────
 
-#section(t("s_skills"))
-#grid(
-  columns: (auto, 1fr),
-  column-gutter: 8pt,
-  row-gutter: 5pt,
-  text(weight: "bold", fill: dark, t("l_backend")),
-  text("Rust (axum, actix-web, tokio, sqlx, tonic/gRPC, utoipa) · Go"),
-  text(weight: "bold", fill: dark, t("l_frontend")),
-  text("TypeScript · React · Rust (Yew.rs, Leptos) · WebAssembly"),
-  text(weight: "bold", fill: dark, t("l_blockchain")),
-  text("Solana (Anchor, QUIC) · TON · Solidity"),
-  text(weight: "bold", fill: dark, t("l_db")),
-  text("PostgreSQL · Redis · MongoDB"),
-  text(weight: "bold", fill: dark, t("l_devops")),
-  text("Kubernetes · Docker · GitHub Actions · NGINX · Prometheus"),
-  text(weight: "bold", fill: dark, t("l_integr")),
-  text("YooKassa · TON Wallet · ChangeNow · Telegram Bot/WebApp API"),
+#let skills = (
+  (t("l_backend"), "Rust (axum, actix-web, tokio, sqlx, tonic/gRPC, utoipa) · Go"),
+  (t("l_frontend"), "TypeScript · React · Rust (Yew.rs, Leptos) · WebAssembly"),
+  (t("l_blockchain"), "Solana (Anchor, QUIC) · TON · Solidity"),
+  (t("l_db"), "PostgreSQL · Redis · MongoDB"),
+  (t("l_devops"), "Kubernetes · Docker · GitHub Actions · NGINX · Prometheus"),
+  (t("l_integr"), "YooKassa · TON Wallet · ChangeNow · Telegram Bot/WebApp API"),
 )
+
+#section(t("s_skills"))
+#if ats {
+  for pair in skills {
+    par(text(weight: "bold", fill: dark, pair.at(0)) + " " + pair.at(1))
+  }
+} else {
+  grid(
+    columns: (auto, 1fr),
+    column-gutter: 8pt,
+    row-gutter: 5pt,
+    ..skills.map(pair => (text(weight: "bold", fill: dark, pair.at(0)), text(pair.at(1)))).flatten(),
+  )
+}
 
 // ── Experience ────────────────────────────────────────────────────────────────
 
