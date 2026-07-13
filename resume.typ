@@ -1,16 +1,17 @@
 // SPDX-FileCopyrightText: 2026 RAprogramm <andrey.rozanov.vl@gmail.com>
 // SPDX-License-Identifier: MIT
 
-// ── Language: read from --input lang=... with "ru" as fallback ─────────────
+// ── Language: read from --input lang=... with "en" as fallback ─────────────
 #let lang = sys.inputs.at("lang", default: "en")
 
-#set page(paper: "a4", margin: (left: 14mm, right: 14mm, top: 14mm, bottom: 14mm))
+#set page(paper: "a4", margin: (left: 14mm, right: 14mm, top: 12mm, bottom: 13mm))
 #set text(
-  font: ("Liberation Sans", "Noto Sans CJK KR"),
-  size: 9.5pt,
+  font: ("Inter", "Noto Sans CJK KR"),
+  weight: "medium",
+  size: 9.2pt,
   lang: lang,
 )
-#set par(leading: 0.55em, justify: false)
+#set par(leading: 0.5em, justify: false)
 #show link: it => text(fill: rgb("#2563eb"), underline(it))
 
 #let blue    = rgb("#2563eb")
@@ -21,7 +22,8 @@
 
 #let T = (
   ru: (
-    role:         "Rust Software Engineer",
+    name:         "Андрей Розанов",
+    role:         "Software Engineer",
     location:     "Вьетнам · Удалённо",
     s_about:      "О себе",
     about:        "Fullstack-разработчик с фокусом на Rust и высоконагруженные системы. 4+ года коммерческого опыта в backend, web-приложениях и блокчейн-решениях. Автор open-source библиотек с суммарными 6 000+ загрузками на crates.io. Maintainer в HyDE Project. Контрибьютор в проекты Zerocracy (Егор Бугаенко). Веду проекты полного цикла: от архитектуры до деплоя в Kubernetes.",
@@ -89,11 +91,12 @@
     lng_en:       "Английский:", lng_en_v: "B2",
     lng_vi:       "Вьетнамский:", lng_vi_v: "базовый",
     lng_ko:       "Корейский:", lng_ko_v: "A1",
-    footer:       "Резюме обновлено: апрель 2026",
+    footer:       "Резюме обновлено: ",
   ),
 
   en: (
-    role:         "Rust Software Engineer",
+    name:         "Andrei Rozanov",
+    role:         "Software Engineer",
     location:     "Vietnam · Remote",
     s_about:      "About",
     about:        "Fullstack developer focused on Rust and high-load systems. 4+ years of commercial experience in backend, web applications and blockchain solutions. Author of open-source libraries with 6,000+ total downloads on crates.io. Maintainer at HyDE Project. Contributor to Zerocracy projects (Yegor Bugayenko). Lead full-cycle projects from architecture to Kubernetes deployment.",
@@ -161,11 +164,12 @@
     lng_en:       "English:", lng_en_v: "B2",
     lng_vi:       "Vietnamese:", lng_vi_v: "basic",
     lng_ko:       "Korean:", lng_ko_v: "A1",
-    footer:       "Resume updated: April 2026",
+    footer:       "Resume updated: ",
   ),
 
   vi: (
-    role:         "Kỹ sư phần mềm Rust",
+    name:         "Andrei Rozanov",
+    role:         "Kỹ sư phần mềm",
     location:     "Việt Nam · Làm việc từ xa",
     s_about:      "Giới thiệu",
     about:        "Lập trình viên Fullstack tập trung vào Rust và các hệ thống tải cao. 4+ năm kinh nghiệm thương mại trong backend, ứng dụng web và giải pháp blockchain. Tác giả các thư viện mã nguồn mở với tổng cộng hơn 6.000 lượt tải trên crates.io. Maintainer tại HyDE Project. Đóng góp cho các dự án Zerocracy (Yegor Bugayenko). Quản lý dự án toàn chu kỳ từ kiến trúc đến triển khai Kubernetes.",
@@ -233,11 +237,12 @@
     lng_en:       "Tiếng Anh:", lng_en_v: "B2",
     lng_vi:       "Tiếng Việt:", lng_vi_v: "cơ bản",
     lng_ko:       "Tiếng Hàn:", lng_ko_v: "A1",
-    footer:       "Cập nhật: tháng 4 năm 2026",
+    footer:       "Cập nhật: ",
   ),
 
   ko: (
-    role:         "Rust 소프트웨어 엔지니어",
+    name:         "Andrei Rozanov",
+    role:         "소프트웨어 엔지니어",
     location:     "베트남 · 원격 근무",
     s_about:      "소개",
     about:        "Rust와 고부하 시스템에 중점을 둔 풀스택 개발자. Backend, 웹 애플리케이션, 블록체인 솔루션 분야 4년 이상의 상업적 경험. crates.io에서 총 6,000회 이상 다운로드된 오픈소스 라이브러리 저자. HyDE Project 메인테이너. Zerocracy 프로젝트 기여자 (Yegor Bugayenko). 아키텍처부터 Kubernetes 배포까지 전체 주기 프로젝트 리드.",
@@ -305,20 +310,32 @@
     lng_en:       "영어:", lng_en_v: "B2",
     lng_vi:       "베트남어:", lng_vi_v: "기초",
     lng_ko:       "한국어:", lng_ko_v: "A1",
-    footer:       "이력서 업데이트: 2026년 4월",
+    footer:       "이력서 업데이트: ",
   ),
 )
 
 #let t(key) = T.at(lang).at(key)
 
+// ── Build date: localized "updated" stamp, computed at compile time ──────────
+
+#let months = (
+  ru: ("январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"),
+  en: ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"),
+)
+
+#let updated = {
+  let d = datetime.today()
+  if lang == "vi" { "tháng " + str(d.month()) + " năm " + str(d.year()) } else if lang == "ko" { str(d.year()) + "년 " + str(d.month()) + "월" } else { months.at(lang).at(d.month() - 1) + " " + str(d.year()) }
+}
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 #let section(title) = {
-  v(0.9em)
+  v(0.75em)
   text(size: 12.5pt, weight: "bold", fill: blue, title)
-  v(0.15em)
+  v(0.1em)
   line(length: 100%, stroke: (paint: blue, thickness: 1.2pt))
-  v(0.35em)
+  v(0.3em)
 }
 
 #let job(pos, company, period) = {
@@ -337,21 +354,27 @@
 
 // ── Header ────────────────────────────────────────────────────────────────────
 
+#set document(title: T.at(lang).at("name") + " — " + T.at(lang).at("role"), author: T.at(lang).at("name"))
+
+#set page(footer: context if counter(page).get() == counter(page).final() {
+  align(center)[#text(size: 7.5pt, fill: slate)[#t("footer")#updated]]
+})
+
 #align(center)[
-  #text(size: 26pt, weight: "bold", fill: dark)[Андрей Розанов]
+  #text(size: 23pt, weight: "bold", fill: dark)[#t("name")]
   #v(0.2em)
   #text(size: 13pt, weight: "bold", fill: blue)[#t("role")]
   #v(0.3em)
-  #text(size: 8.8pt)[
-    #link("tel:+79940043995")[+7 994 004-39-95]
-    #h(0.7em)#text(fill: slate)[|]#h(0.7em)
-    #link("mailto:andrey.rozanov.vl@gmail.com")[andrey.rozanov.vl\@gmail.com]
-    #h(0.7em)#text(fill: slate)[|]#h(0.7em)
-    #link("https://github.com/RAprogramm")[github.com/RAprogramm]
-    #h(0.7em)#text(fill: slate)[|]#h(0.7em)
-    #link("https://crates.io/users/RAprogramm")[crates.io/users/RAprogramm]
-    #h(0.7em)#text(fill: slate)[|]#h(0.7em)
-    #link("https://t.me/Magistr_RA")[t.me/Magistr\_RA]
+  #text(size: 7.8pt)[
+    #box(link("tel:+79940043995")[+7 994 004-39-95])
+    #h(0.4em)#text(fill: slate)[|]#h(0.4em)
+    #box(link("mailto:andrey.rozanov.vl@gmail.com")[andrey.rozanov.vl\@gmail.com])
+    #h(0.4em)#text(fill: slate)[|]#h(0.4em)
+    #box(link("https://github.com/RAprogramm")[github.com/RAprogramm])
+    #h(0.4em)#text(fill: slate)[|]#h(0.4em)
+    #box(link("https://crates.io/users/RAprogramm")[crates.io/users/RAprogramm])
+    #h(0.4em)#text(fill: slate)[|]#h(0.4em)
+    #box(link("https://t.me/Magistr_RA")[t.me/Magistr\_RA])
   ]
   #v(0.15em)
   #text(size: 8.5pt, fill: slate)[#t("location")]
@@ -421,14 +444,14 @@
   #t("stack_lbl") Rust · axum · PostgreSQL · Redis · React · TypeScript · Kubernetes · GitHub Actions
 ]
 
-#v(0.7em)
+#v(0.55em)
 #job(t("j_back"), "Smart Money", "06/2024 — 08/2024")
 #v(0.15em)
 #text(size: 8.8pt)[#t("sm_desc")]
 #v(0.1em)
 #text(size: 8.5pt, fill: slate, style: "italic")[#t("stack_lbl") Rust · axum · PostgreSQL]
 
-#v(0.7em)
+#v(0.55em)
 #job(t("j_back_sol"), "Cerberus Software", "04/2024 — 05/2024")
 #v(0.15em)
 #bul[#t("cerb_1")]
@@ -437,7 +460,7 @@
 #v(0.1em)
 #text(size: 8.5pt, fill: slate, style: "italic")[#t("stack_lbl") Rust · Solana · Anchor · QUIC]
 
-#v(0.7em)
+#v(0.55em)
 #job(t("j_full"), "Habdev", "03/2024")
 #v(0.15em)
 #bul[#t("hab2_1")]
@@ -445,7 +468,7 @@
 #v(0.1em)
 #text(size: 8.5pt, fill: slate, style: "italic")[#t("stack_lbl") Rust · React · PostgreSQL · Docker · NGINX · GitHub Actions]
 
-#v(0.7em)
+#v(0.55em)
 #job(t("j_full"), "Aichel", "01/2024 — 02/2024")
 #v(0.15em)
 #bul[#t("aich_1")]
@@ -453,7 +476,7 @@
 #v(0.1em)
 #text(size: 8.5pt, fill: slate, style: "italic")[#t("stack_lbl") Rust · Yew.rs · WebAssembly · gRPC · MongoDB · Envoy]
 
-#v(0.7em)
+#v(0.55em)
 #job(t("j_back"), "Habdev", "06/2023 — 12/2023")
 #v(0.15em)
 #text(weight: "bold", size: 9pt)[#t("hab1_game")]
@@ -477,20 +500,20 @@
 
     #link("https://crates.io/crates/telegram-webapp-sdk")[#text(weight: "bold")[telegram-webapp-sdk]]
     #h(0.3em)#text(fill: blue, size: 8pt)[★ 33]
-    #v(0.1em)#text(size: 8.8pt)[#t("lib_tg")]#v(0.4em)
+    #v(0.1em)#text(size: 8.8pt)[#t("lib_tg")]#v(0.3em)
 
     #link("https://github.com/RAprogramm/sql-query-analyzer")[#text(weight: "bold")[sql-query-analyzer]]
     #h(0.3em)#text(fill: blue, size: 8pt)[★ 20]
-    #v(0.1em)#text(size: 8.8pt)[#t("lib_sql")]#v(0.4em)
+    #v(0.1em)#text(size: 8.8pt)[#t("lib_sql")]#v(0.3em)
 
     #link("https://github.com/RAprogramm/entity-derive")[#text(weight: "bold")[entity-derive]]
-    #v(0.1em)#text(size: 8.8pt)[#t("lib_ent")]#v(0.4em)
+    #v(0.1em)#text(size: 8.8pt)[#t("lib_ent")]#v(0.3em)
 
     #link("https://crates.io/crates/masterror")[#text(weight: "bold")[masterror]]
-    #v(0.1em)#text(size: 8.8pt)[#t("lib_master")]#v(0.4em)
+    #v(0.1em)#text(size: 8.8pt)[#t("lib_master")]#v(0.3em)
 
     #link("https://github.com/RAprogramm/solana-quic-client")[#text(weight: "bold")[solana-quic-client]]
-    #v(0.1em)#text(size: 8.8pt)[#t("lib_quic")]#v(0.4em)
+    #v(0.1em)#text(size: 8.8pt)[#t("lib_quic")]#v(0.3em)
 
     #link("https://github.com/RAprogramm/telegram-bot-template")[#text(weight: "bold")[telegram-bot-template]]
     #v(0.1em)#text(size: 8.8pt)[#t("lib_bot")]
@@ -501,28 +524,28 @@
 
     #link("https://github.com/RAprogramm/RustManifest")[#text(weight: "bold")[RustManifest]]
     #h(0.3em)#text(fill: blue, size: 8pt)[★ 5]
-    #v(0.1em)#text(size: 8.8pt)[#t("tool_rust")]#v(0.4em)
+    #v(0.1em)#text(size: 8.8pt)[#t("tool_rust")]#v(0.3em)
 
     #link("https://github.com/RAprogramm/cargo-quality")[#text(weight: "bold")[cargo-quality]]
-    #v(0.1em)#text(size: 8.8pt)[#t("tool_quality")]#v(0.4em)
+    #v(0.1em)#text(size: 8.8pt)[#t("tool_quality")]#v(0.3em)
 
     #link("https://github.com/RAprogramm/rust-prod-diff-checker")[#text(weight: "bold")[rust-prod-diff-checker]]
-    #v(0.1em)#text(size: 8.8pt)[#t("tool_diff")]#v(0.4em)
+    #v(0.1em)#text(size: 8.8pt)[#t("tool_diff")]#v(0.3em)
 
     #text(weight: "bold", fill: dark, size: 9pt)[#t("oss_sys")]
     #v(0.3em)
 
     #link("https://github.com/RAprogramm/micromap")[#text(weight: "bold")[micromap / emap / microstack]]
-    #v(0.1em)#text(size: 8.8pt)[#t("sys_micro")]#v(0.4em)
+    #v(0.1em)#text(size: 8.8pt)[#t("sys_micro")]#v(0.3em)
 
     #link("https://crates.io/crates/cstring-array")[#text(weight: "bold")[cstring-array]]
-    #v(0.1em)#text(size: 8.8pt)[#t("sys_cstr")]#v(0.4em)
+    #v(0.1em)#text(size: 8.8pt)[#t("sys_cstr")]#v(0.3em)
 
     #link("https://github.com/RAprogramm/logi-mx")[#text(weight: "bold")[logi-mx]]
     #v(0.1em)#text(size: 8.8pt)[#t("sys_logi")]
   ],
 )
-#v(0.4em)
+#v(0.3em)
 #text(weight: "bold", size: 9pt)[#t("contrib_lbl")]
 #h(0.4em)
 #text(size: 8.8pt)[#t("contrib_txt")]
@@ -531,7 +554,7 @@
 
 #section(t("s_edu"))
 #grid(
-  columns: (2fr, 1fr),
+  columns: (1.1fr, 1fr),
   column-gutter: 10pt,
   [
     #text(weight: "bold")[#t("edu_name")]
@@ -539,15 +562,13 @@
     #text(fill: slate, size: 8.5pt)[#t("edu_detail")]
   ],
   [
-    #text(weight: "bold")[#t("lng_ru")] #t("lng_ru_v")
-    #h(0.5em)
-    #text(weight: "bold")[#t("lng_en")] #t("lng_en_v")
-    #h(0.5em)
-    #text(weight: "bold")[#t("lng_vi")] #t("lng_vi_v")
-    #h(0.5em)
-    #text(weight: "bold")[#t("lng_ko")] #t("lng_ko_v")
+    #grid(
+      columns: (1fr, 1fr),
+      row-gutter: 0.35em,
+      [#text(weight: "bold")[#t("lng_ru")] #t("lng_ru_v")],
+      [#text(weight: "bold")[#t("lng_en")] #t("lng_en_v")],
+      [#text(weight: "bold")[#t("lng_vi")] #t("lng_vi_v")],
+      [#text(weight: "bold")[#t("lng_ko")] #t("lng_ko_v")],
+    )
   ],
 )
-
-#v(0.8em)
-#align(center)[#text(size: 7.5pt, fill: slate)[#t("footer")]]
