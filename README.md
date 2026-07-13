@@ -17,9 +17,11 @@
 | 한국어 | [![KO](https://img.shields.io/badge/KO-blue?style=for-the-badge)](https://github.com/RAprogramm/cv-resume/releases/latest/download/Rozanov_Andrei_CV_ko.pdf) |
 | Tiếng Việt | [![VI](https://img.shields.io/badge/VI-blue?style=for-the-badge)](https://github.com/RAprogramm/cv-resume/releases/latest/download/Rozanov_Andrei_CV_vi.pdf) |
 
+ATS-friendly single-column variants: [EN](https://github.com/RAprogramm/cv-resume/releases/latest/download/Rozanov_Andrei_CV_en_ATS.pdf) · [RU](https://github.com/RAprogramm/cv-resume/releases/latest/download/Rozanov_Andrei_CV_ru_ATS.pdf)
+
 ## How it works
 
-- **Source:** single [`resume.typ`](resume.typ) (Typst) with an embedded translation table — one file, four languages (`--input lang=en|ru|ko|vi`).
+- **Source:** single [`resume.typ`](resume.typ) (Typst) with an embedded translation table — one file, four languages (`--input lang=en|ru|ko|vi`) plus an ATS single-column layout (`--input layout=ats`); PDFs conform to PDF/A-2b.
 - **Fonts:** [Inter](https://rsms.me/inter/) bundled in [`fonts/`](fonts/), Noto Sans CJK KR installed in CI; embedding is verified on every build.
 - **CI:** every push to `main` compiles all four PDFs, verifies fonts, publishes a GitHub release, and deploys the [web page](https://raprogramm.github.io/cv-resume/).
 
