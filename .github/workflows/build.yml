@@ -1,4 +1,4 @@
-name: Build CV Release
+name: Build CV
 
 on:
   push:
@@ -13,16 +13,29 @@ on:
 env:
   RESUME: Rozanov_Andrei_CV
   LANGUAGES: ru en ko vi
+  TYPST_VERSION: 0.15.0
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    outputs:
+      version: ${{ steps.version.outputs.version }}
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v5
+        with:
+          typst-version: ${{ env.TYPST_VERSION }}
+
+      - name: Install CJK fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
 
       - name: Determine version
         id: version
@@ -42,16 +55,29 @@ jobs:
           mkdir -p release
           for lang in $LANGUAGES; do
             echo "Building $lang..."
-            docker run --rm \
-              -v "${{ github.workspace }}:/docs" \
-              ghcr.io/typst/typst:latest \
-              compile \
-                --input lang=$lang \
-                --root /docs \
-                /docs/resume.typ \
-                /docs/release/${RESUME}_${lang}.pdf
+            typst compile \
+              --font-path fonts \
+              --input lang=$lang \
+              --root . \
+              resume.typ \
+              release/${RESUME}_${lang}.pdf
           done
           ls -lh release/
+
+      - name: Verify fonts are embedded
+        run: |
+          sudo apt-get install -y --no-install-recommends poppler-utils
+          for lang in $LANGUAGES; do
+            f="release/${RESUME}_${lang}.pdf"
+            if ! pdffonts "$f" | grep -q "Inter"; then
+              echo "::error::Inter is not embedded in $f — font setup is broken"
+              exit 1
+            fi
+          done
+          if ! pdffonts "release/${RESUME}_ko.pdf" | grep -qi "NotoSansCJK"; then
+            echo "::error::Noto Sans CJK KR is not embedded in the Korean PDF"
+            exit 1
+          fi
 
       - name: Delete old release tag
         env:
@@ -75,8 +101,41 @@ jobs:
             --notes "Languages: $(echo $LANGUAGES | tr ' ' ', ')"
 
       - name: Upload workflow artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: resume-pdfs
           path: release/
           retention-days: 7
+
+  pages:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: read
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Download built PDFs
+        uses: actions/download-artifact@v8
+        with:
+          name: resume-pdfs
+          path: _site/pdf
+
+      - name: Assemble site
+        run: cp site/index.html _site/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
