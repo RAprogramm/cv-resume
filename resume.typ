@@ -26,7 +26,7 @@
     role:         "Software Engineer",
     location:     "Вьетнам · Удалённо",
     s_about:      "О себе",
-    about:        "Fullstack-разработчик с фокусом на Rust и высоконагруженные системы. 4+ года коммерческого опыта в backend, web-приложениях и блокчейн-решениях. Автор open-source библиотек с суммарными 6 000+ загрузками на crates.io. Maintainer в HyDE Project. Контрибьютор в проекты Zerocracy (Егор Бугаенко). Веду проекты полного цикла: от архитектуры до деплоя в Kubernetes.",
+    about:        "Fullstack-разработчик с фокусом на Rust и высоконагруженные системы. 4+ года коммерческого опыта в backend, web-приложениях и блокчейн-решениях. Автор open-source библиотек с суммарными 50 000+ загрузками на crates.io. Maintainer в HyDE Project. Контрибьютор в проекты Zerocracy (Егор Бугаенко). Веду проекты полного цикла: от архитектуры до деплоя в Kubernetes.",
     s_skills:     "Технический стек",
     l_backend:    "Backend:",
     l_frontend:   "Frontend:",
@@ -66,7 +66,7 @@
     hab1_g2:      "Solidity смарт-контракты для внутриигровой экономики",
     hab1_agg:     "Агрегатор криптоданных:",
     hab1_a1:      "Сбор данных с бирж, расчёт метрик, REST API для фронтенда",
-    s_oss:        "Open Source  ·  40+ репозиториев  ·  6 000+ загрузок на crates.io",
+    s_oss:        "Open Source  ·  40+ репозиториев  ·  50 000+ загрузок на crates.io",
     oss_libs:     "Библиотеки и инструменты",
     oss_tools:    "Инструменты и стандарты",
     oss_sys:      "Системное и низкоуровневое",
@@ -83,7 +83,7 @@
     sys_cstr:     "Safe zero-copy обёртка для передачи строк в C FFI (char**)",
     sys_logi:     "Полноценный Linux-драйвер и конфигуратор для мышей Logitech MX",
     contrib_lbl:  "Контрибуты в сообщество:",
-    contrib_txt:  "HyDE Project — Maintainer (Rice Team), 16+ тем для Hyprland. Zerocracy / Objectionary — оплачиваемые контрибуты в sodg.rs и phie (Егор Бугаенко).",
+    contrib_txt:  "HyDE Project — Maintainer (Rice Team), темы Dracula и One Dark в официальной галерее. Zerocracy / Objectionary — оплачиваемые контрибуты в sodg.rs и phie (Егор Бугаенко).",
     s_edu:        "Образование и языки",
     edu_name:     "ВФ РТА — Юридический факультет",
     edu_detail:   "неоконченное высшее, 2013",
@@ -99,7 +99,7 @@
     role:         "Software Engineer",
     location:     "Vietnam · Remote",
     s_about:      "About",
-    about:        "Fullstack developer focused on Rust and high-load systems. 4+ years of commercial experience in backend, web applications and blockchain solutions. Author of open-source libraries with 6,000+ total downloads on crates.io. Maintainer at HyDE Project. Contributor to Zerocracy projects (Yegor Bugayenko). Lead full-cycle projects from architecture to Kubernetes deployment.",
+    about:        "Fullstack developer focused on Rust and high-load systems. 4+ years of commercial experience in backend, web applications and blockchain solutions. Author of open-source libraries with 50,000+ total downloads on crates.io. Maintainer at HyDE Project. Contributor to Zerocracy projects (Yegor Bugayenko). Lead full-cycle projects from architecture to Kubernetes deployment.",
     s_skills:     "Technical Stack",
     l_backend:    "Backend:",
     l_frontend:   "Frontend:",
@@ -139,7 +139,7 @@
     hab1_g2:      "Solidity smart contracts for the in-game economy",
     hab1_agg:     "Crypto Data Aggregator:",
     hab1_a1:      "Exchange data collection, metrics computation, REST API for the frontend",
-    s_oss:        "Open Source  ·  40+ repositories  ·  6,000+ downloads on crates.io",
+    s_oss:        "Open Source  ·  40+ repositories  ·  50,000+ downloads on crates.io",
     oss_libs:     "Libraries & Tools",
     oss_tools:    "Dev Tools & Standards",
     oss_sys:      "Systems & Low-level",
@@ -156,7 +156,7 @@
     sys_cstr:     "Safe zero-copy wrapper for passing strings to C FFI (char**)",
     sys_logi:     "Full Linux driver and configurator for Logitech MX mice",
     contrib_lbl:  "Community Contributions:",
-    contrib_txt:  "HyDE Project — Maintainer (Rice Team), 16+ themes for Hyprland. Zerocracy / Objectionary — paid contributions to sodg.rs and phie (Yegor Bugayenko).",
+    contrib_txt:  "HyDE Project — Maintainer (Rice Team), Dracula and One Dark themes in the official gallery. Zerocracy / Objectionary — paid contributions to sodg.rs and phie (Yegor Bugayenko).",
     s_edu:        "Education & Languages",
     edu_name:     "VF RTA — Faculty of Law",
     edu_detail:   "incomplete higher education, 2013",
@@ -172,7 +172,7 @@
     role:         "Kỹ sư phần mềm",
     location:     "Việt Nam · Làm việc từ xa",
     s_about:      "Giới thiệu",
-    about:        "Lập trình viên Fullstack tập trung vào Rust và các hệ thống tải cao. 4+ năm kinh nghiệm thương mại trong backend, ứng dụng web và giải pháp blockchain. Tác giả các thư viện mã nguồn mở với tổng cộng hơn 6.000 lượt tải trên crates.io. Maintainer tại HyDE Project. Đóng góp cho các dự án Zerocracy (Yegor Bugayenko). Quản lý dự án toàn chu kỳ từ kiến trúc đến triển khai Kubernetes.",
+    about:        "Lập trình viên Fullstack tập trung vào Rust và các hệ thống tải cao. 4+ năm kinh nghiệm thương mại trong backend, ứng dụng web và giải pháp blockchain. Tác giả các thư viện mã nguồn mở với tổng cộng hơn 50.000 lượt tải trên crates.io. Maintainer tại HyDE Project. Đóng góp cho các dự án Zerocracy (Yegor Bugayenko). Quản lý dự án toàn chu kỳ từ kiến trúc đến triển khai Kubernetes.",
     s_skills:     "Công nghệ",
     l_backend:    "Backend:",
     l_frontend:   "Frontend:",
@@ -212,7 +212,7 @@
     hab1_g2:      "Smart contract Solidity cho nền kinh tế trong game",
     hab1_agg:     "Tổng hợp dữ liệu crypto:",
     hab1_a1:      "Thu thập dữ liệu từ sàn giao dịch, tính toán metrics, REST API cho frontend",
-    s_oss:        "Mã nguồn mở  ·  40+ kho lưu trữ  ·  6.000+ lượt tải trên crates.io",
+    s_oss:        "Mã nguồn mở  ·  40+ kho lưu trữ  ·  50.000+ lượt tải trên crates.io",
     oss_libs:     "Thư viện & Công cụ",
     oss_tools:    "Công cụ phát triển & Tiêu chuẩn",
     oss_sys:      "Hệ thống & Cấp thấp",
@@ -229,7 +229,7 @@
     sys_cstr:     "Wrapper zero-copy an toàn để truyền chuỗi vào C FFI (char**)",
     sys_logi:     "Driver Linux đầy đủ và công cụ cấu hình cho chuột Logitech MX",
     contrib_lbl:  "Đóng góp cộng đồng:",
-    contrib_txt:  "HyDE Project — Maintainer (Rice Team), 16+ theme cho Hyprland. Zerocracy / Objectionary — đóng góp có thù lao vào sodg.rs và phie (Yegor Bugayenko).",
+    contrib_txt:  "HyDE Project — Maintainer (Rice Team), theme Dracula và One Dark trong bộ sưu tập chính thức. Zerocracy / Objectionary — đóng góp có thù lao vào sodg.rs và phie (Yegor Bugayenko).",
     s_edu:        "Học vấn và Ngôn ngữ",
     edu_name:     "VF RTA — Khoa Luật",
     edu_detail:   "chưa hoàn thành đại học, 2013",
@@ -245,7 +245,7 @@
     role:         "소프트웨어 엔지니어",
     location:     "베트남 · 원격 근무",
     s_about:      "소개",
-    about:        "Rust와 고부하 시스템에 중점을 둔 풀스택 개발자. Backend, 웹 애플리케이션, 블록체인 솔루션 분야 4년 이상의 상업적 경험. crates.io에서 총 6,000회 이상 다운로드된 오픈소스 라이브러리 저자. HyDE Project 메인테이너. Zerocracy 프로젝트 기여자 (Yegor Bugayenko). 아키텍처부터 Kubernetes 배포까지 전체 주기 프로젝트 리드.",
+    about:        "Rust와 고부하 시스템에 중점을 둔 풀스택 개발자. Backend, 웹 애플리케이션, 블록체인 솔루션 분야 4년 이상의 상업적 경험. crates.io에서 총 50,000회 이상 다운로드된 오픈소스 라이브러리 저자. HyDE Project 메인테이너. Zerocracy 프로젝트 기여자 (Yegor Bugayenko). 아키텍처부터 Kubernetes 배포까지 전체 주기 프로젝트 리드.",
     s_skills:     "기술 스택",
     l_backend:    "Backend:",
     l_frontend:   "Frontend:",
@@ -285,7 +285,7 @@
     hab1_g2:      "인게임 경제를 위한 Solidity 스마트 컨트랙트",
     hab1_agg:     "크립토 데이터 애그리게이터:",
     hab1_a1:      "거래소 데이터 수집, 지표 계산, 프론트엔드용 REST API",
-    s_oss:        "오픈소스  ·  40개 이상 저장소  ·  crates.io 6,000회 이상 다운로드",
+    s_oss:        "오픈소스  ·  40개 이상 저장소  ·  crates.io 50,000회 이상 다운로드",
     oss_libs:     "라이브러리 & 도구",
     oss_tools:    "개발 도구 & 표준",
     oss_sys:      "시스템 & 저수준",
@@ -302,7 +302,7 @@
     sys_cstr:     "C FFI(char**) 문자열 전달을 위한 안전한 제로카피 래퍼",
     sys_logi:     "Logitech MX 마우스용 완전한 Linux 드라이버 및 설정 도구",
     contrib_lbl:  "커뮤니티 기여:",
-    contrib_txt:  "HyDE Project — Maintainer (Rice Team), Hyprland용 16개 이상 테마. Zerocracy / Objectionary — sodg.rs 및 phie 유료 기여 (Yegor Bugayenko).",
+    contrib_txt:  "HyDE Project — Maintainer (Rice Team), 공식 갤러리의 Dracula 및 One Dark 테마. Zerocracy / Objectionary — sodg.rs 및 phie 유료 기여 (Yegor Bugayenko).",
     s_edu:        "학력 및 언어",
     edu_name:     "VF RTA — 법학부",
     edu_detail:   "중퇴, 2013",
@@ -499,11 +499,11 @@
     #v(0.3em)
 
     #link("https://crates.io/crates/telegram-webapp-sdk")[#text(weight: "bold")[telegram-webapp-sdk]]
-    #h(0.3em)#text(fill: blue, size: 8pt)[★ 33]
+    #h(0.3em)#text(fill: blue, size: 8pt)[★ 40]
     #v(0.1em)#text(size: 8.8pt)[#t("lib_tg")]#v(0.3em)
 
     #link("https://github.com/RAprogramm/sql-query-analyzer")[#text(weight: "bold")[sql-query-analyzer]]
-    #h(0.3em)#text(fill: blue, size: 8pt)[★ 20]
+    #h(0.3em)#text(fill: blue, size: 8pt)[★ 25]
     #v(0.1em)#text(size: 8.8pt)[#t("lib_sql")]#v(0.3em)
 
     #link("https://github.com/RAprogramm/entity-derive")[#text(weight: "bold")[entity-derive]]
