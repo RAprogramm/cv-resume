@@ -14,8 +14,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Check links
-        id: lychee
+      - name: Check repo docs links
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          args: >-
+            --no-progress
+            --accept 200..=299,429
+            --exclude '^tel:'
+            --exclude '^mailto:'
+            README.md resume.typ
+          fail: true
+
+      - name: Check live site links
         uses: lycheeverse/lychee-action@v2.9.0
         with:
           args: >-
@@ -24,7 +34,7 @@ jobs:
             --exclude '^tel:'
             --exclude '^mailto:'
             --base-url https://raprogramm.github.io/cv-resume/
-            README.md resume.typ site/index.html
+            site/index.html
           fail: true
 
       - name: Open issue on failure
