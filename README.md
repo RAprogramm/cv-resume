@@ -1,6 +1,12 @@
-# CV Resume — Andrey Rozanov
+# CV — Andrei Rozanov
 
-Rust Software Engineer · Fullstack Developer
+**Software Engineer** · Rust by choice
+
+[![Build CV](https://github.com/RAprogramm/cv-resume/actions/workflows/build.yml/badge.svg)](https://github.com/RAprogramm/cv-resume/actions/workflows/build.yml)
+[![Pages](https://img.shields.io/badge/Web-raprogramm.github.io%2Fcv--resume-f74c00?style=flat&logo=github)](https://raprogramm.github.io/cv-resume/)
+[![Typst](https://img.shields.io/badge/Typst-0.15-239dad?style=flat)](https://typst.app)
+
+**→ [View & download online](https://raprogramm.github.io/cv-resume/)**
 
 ## Downloads
 
@@ -8,9 +14,17 @@ Rust Software Engineer · Fullstack Developer
 |----------|-------|
 | English | [![EN](https://img.shields.io/badge/EN-blue?style=for-the-badge)](https://github.com/RAprogramm/cv-resume/releases/latest/download/Rozanov_Andrei_CV_en.pdf) |
 | Русский | [![RU](https://img.shields.io/badge/RU-blue?style=for-the-badge)](https://github.com/RAprogramm/cv-resume/releases/latest/download/Rozanov_Andrei_CV_ru.pdf) |
-| Korean | [![KO](https://img.shields.io/badge/KO-blue?style=for-the-badge)](https://github.com/RAprogramm/cv-resume/releases/latest/download/Rozanov_Andrei_CV_ko.pdf) |
-| Vietnamese | [![VI](https://img.shields.io/badge/VI-blue?style=for-the-badge)](https://github.com/RAprogramm/cv-resume/releases/latest/download/Rozanov_Andrei_CV_vi.pdf) |
+| 한국어 | [![KO](https://img.shields.io/badge/KO-blue?style=for-the-badge)](https://github.com/RAprogramm/cv-resume/releases/latest/download/Rozanov_Andrei_CV_ko.pdf) |
+| Tiếng Việt | [![VI](https://img.shields.io/badge/VI-blue?style=for-the-badge)](https://github.com/RAprogramm/cv-resume/releases/latest/download/Rozanov_Andrei_CV_vi.pdf) |
 
----
+## How it works
 
-**Source:** `resume.typ` — Typst document compiled via [GitHub Actions](https://github.com/RAprogramm/cv-resume/actions).
+- **Source:** single [`resume.typ`](resume.typ) (Typst) with an embedded translation table — one file, four languages (`--input lang=en|ru|ko|vi`).
+- **Fonts:** [Inter](https://rsms.me/inter/) bundled in [`fonts/`](fonts/), Noto Sans CJK KR installed in CI; embedding is verified on every build.
+- **CI:** every push to `main` compiles all four PDFs, verifies fonts, publishes a GitHub release, and deploys the [web page](https://raprogramm.github.io/cv-resume/).
+
+## Build locally
+
+```sh
+typst compile --font-path fonts --input lang=en resume.typ cv_en.pdf
+```
