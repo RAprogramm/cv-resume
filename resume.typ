@@ -4,6 +4,9 @@
 // ── Language: read from --input lang=... with "en" as fallback ─────────────
 #let lang = sys.inputs.at("lang", default: "en")
 
+// ── Layout: --input layout=ats produces a single-column ATS-friendly PDF ────
+#let ats = sys.inputs.at("layout", default: "standard") == "ats"
+
 #set page(paper: "a4", margin: (left: 14mm, right: 14mm, top: 12mm, bottom: 13mm))
 #set text(
   font: ("Inter", "Noto Sans CJK KR"),
@@ -91,6 +94,7 @@
     lng_en:       "Английский:", lng_en_v: "B2",
     lng_vi:       "Вьетнамский:", lng_vi_v: "базовый",
     lng_ko:       "Корейский:", lng_ko_v: "A1",
+    present:      "наст. время",
     footer:       "Резюме обновлено: ",
   ),
 
@@ -164,6 +168,7 @@
     lng_en:       "English:", lng_en_v: "B2",
     lng_vi:       "Vietnamese:", lng_vi_v: "basic",
     lng_ko:       "Korean:", lng_ko_v: "A1",
+    present:      "present",
     footer:       "Resume updated: ",
   ),
 
@@ -237,6 +242,7 @@
     lng_en:       "Tiếng Anh:", lng_en_v: "B2",
     lng_vi:       "Tiếng Việt:", lng_vi_v: "cơ bản",
     lng_ko:       "Tiếng Hàn:", lng_ko_v: "A1",
+    present:      "hiện tại",
     footer:       "Cập nhật: ",
   ),
 
@@ -310,6 +316,7 @@
     lng_en:       "영어:", lng_en_v: "B2",
     lng_vi:       "베트남어:", lng_vi_v: "기초",
     lng_ko:       "한국어:", lng_ko_v: "A1",
+    present:      "현재",
     footer:       "이력서 업데이트: ",
   ),
 )
@@ -410,12 +417,12 @@
 
 #section(t("s_exp"))
 
-#job(t("j_lead"), "QBD", "10/2024 — ...")
+#job(t("j_lead"), "QBD", "10/2024 — " + t("present"))
 #v(0.2em)
 #text(size: 8.8pt, fill: slate)[#t("qbd_desc")]
 #v(0.25em)
 #grid(
-  columns: (1fr, 1fr),
+  columns: if ats { (1fr,) } else { (1fr, 1fr) },
   column-gutter: 10pt,
   row-gutter: 0.4em,
   [
@@ -491,7 +498,7 @@
 
 #section(t("s_oss"))
 #grid(
-  columns: (1fr, 1fr),
+  columns: if ats { (1fr,) } else { (1fr, 1fr) },
   column-gutter: 12pt,
   row-gutter: 0.5em,
   [
@@ -554,8 +561,9 @@
 
 #section(t("s_edu"))
 #grid(
-  columns: (1.1fr, 1fr),
+  columns: if ats { (1fr,) } else { (1.1fr, 1fr) },
   column-gutter: 10pt,
+  row-gutter: 0.5em,
   [
     #text(weight: "bold")[#t("edu_name")]
     #h(0.5em)
