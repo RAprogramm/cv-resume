@@ -23,6 +23,7 @@ jobs:
             --accept 200..=299,429
             --exclude '^tel:'
             --exclude '^mailto:'
+            --base-url https://raprogramm.github.io/cv-resume/
             README.md resume.typ site/index.html
           fail: true
 
