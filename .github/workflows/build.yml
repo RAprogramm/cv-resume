@@ -58,7 +58,7 @@ jobs:
           for lang in $LANGUAGES; do
             echo "Building $lang..."
             typst compile \
-              --font-path fonts \
+              --font-path fonts/print \
               --input lang=$lang \
               --pdf-standard a-2b \
               --root . \
@@ -71,7 +71,7 @@ jobs:
           for lang in $ATS_LANGUAGES; do
             echo "Building ATS $lang..."
             typst compile \
-              --font-path fonts \
+              --font-path fonts/print \
               --input lang=$lang \
               --input layout=ats \
               --pdf-standard a-2b \
@@ -145,7 +145,7 @@ jobs:
       - name: Assemble site
         run: |
           cp site/index.html _site/
-          cp -r site/fonts _site/fonts
+          cp -r fonts/web _site/fonts
           mv _site/pdf/thumbs _site/thumbs
 
       - name: Upload Pages artifact

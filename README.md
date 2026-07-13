@@ -22,11 +22,11 @@ ATS-friendly single-column variants: [EN](https://github.com/RAprogramm/cv-resum
 ## How it works
 
 - **Source:** single [`resume.typ`](resume.typ) (Typst) with an embedded translation table — one file, four languages (`--input lang=en|ru|ko|vi`) plus an ATS single-column layout (`--input layout=ats`); PDFs conform to PDF/A-2b.
-- **Fonts:** [Inter](https://rsms.me/inter/) bundled in [`fonts/`](fonts/), Noto Sans CJK KR installed in CI; embedding is verified on every build.
+- **Fonts:** [Inter](https://rsms.me/inter/) for PDFs in [`fonts/print/`](fonts/print/), JetBrains Mono for the web page in [`fonts/web/`](fonts/web/), Noto Sans CJK KR installed in CI; embedding is verified on every build.
 - **CI:** every push to `main` compiles all four PDFs, verifies fonts, publishes a GitHub release, and deploys the [web page](https://raprogramm.github.io/cv-resume/).
 
 ## Build locally
 
 ```sh
-typst compile --font-path fonts --input lang=en resume.typ cv_en.pdf
+typst compile --font-path fonts/print --input lang=en resume.typ cv_en.pdf
 ```
