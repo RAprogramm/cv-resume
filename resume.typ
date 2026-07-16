@@ -29,7 +29,7 @@
     role:         "Software Engineer",
     location:     "Вьетнам · Удалённо",
     s_about:      "О себе",
-    about:        "Fullstack-разработчик с фокусом на Rust и высоконагруженные системы. 4+ года коммерческого опыта в backend, web-приложениях и блокчейн-решениях. Автор open-source библиотек с суммарными 50 000+ загрузками на crates.io. Maintainer в HyDE Project. Контрибьютор в проекты Zerocracy (Егор Бугаенко). Веду проекты полного цикла: от архитектуры до деплоя в Kubernetes.",
+    about:        "Fullstack-разработчик с фокусом на Rust и высоконагруженные системы. 4+ года коммерческого опыта в backend, web-приложениях и блокчейн-решениях. Победитель open-source фестиваля KaiCode 2026 (1-е место из 153 проектов). Автор open-source библиотек с суммарными 50 000+ загрузками на crates.io. Maintainer в HyDE Project. Контрибьютор в проекты Zerocracy (Егор Бугаенко). Веду проекты полного цикла: от архитектуры до деплоя в Kubernetes.",
     s_skills:     "Технический стек",
     l_backend:    "Backend:",
     l_frontend:   "Frontend:",
@@ -73,6 +73,8 @@
     oss_libs:     "Библиотеки и инструменты",
     oss_tools:    "Инструменты и стандарты",
     oss_sys:      "Системное и низкоуровневое",
+    lib_nav:      "Enterprise-grade библиотека навигации для Yew с автоопределением активного состояния",
+    lib_nav_awd:  "KaiCode 2026 — 1-е место из 153 проектов",
     lib_tg:       "Type-safe Rust обёртка для Telegram Web Apps API",
     lib_sql:      "Статический анализ SQL + LLM-оптимизация; SARIF output, CI/CD-ready",
     lib_ent:      "Derive-макрос: генерация DTO, репозиториев, SQL, REST и OpenAPI",
@@ -86,7 +88,7 @@
     sys_cstr:     "Safe zero-copy обёртка для передачи строк в C FFI (char**)",
     sys_logi:     "Полноценный Linux-драйвер и конфигуратор для мышей Logitech MX",
     contrib_lbl:  "Контрибуты в сообщество:",
-    contrib_txt:  "HyDE Project — Maintainer (Rice Team), темы Dracula и One Dark в официальной галерее. Zerocracy / Objectionary — оплачиваемые контрибуты в sodg.rs и phie (Егор Бугаенко).",
+    contrib_txt:  "happy-dom (4.5k ★) — canvas-рендеринг по adapter pattern смержен в ядро, закрыт feature request 2021 года. HyDE Project — Maintainer (Rice Team), темы Dracula и One Dark в официальной галерее. Zerocracy / Objectionary — оплачиваемые контрибуты в sodg.rs и phie (Егор Бугаенко).",
     s_edu:        "Образование и языки",
     edu_name:     "ВФ РТА — Юридический факультет",
     edu_detail:   "неоконченное высшее, 2013",
@@ -102,7 +104,7 @@
     role:         "Software Engineer",
     location:     "Vietnam · Remote",
     s_about:      "About",
-    about:        "Fullstack developer focused on Rust and high-load systems. 4+ years of commercial experience in backend, web applications and blockchain solutions. Author of open-source libraries with 50,000+ total downloads on crates.io. Maintainer at HyDE Project. Contributor to Zerocracy projects (Yegor Bugayenko). Lead full-cycle projects from architecture to Kubernetes deployment.",
+    about:        "Fullstack developer focused on Rust and high-load systems. 4+ years of commercial experience in backend, web applications and blockchain solutions. Winner of the KaiCode 2026 open-source festival (1st place out of 153 projects). Author of open-source libraries with 50,000+ total downloads on crates.io. Maintainer at HyDE Project. Contributor to Zerocracy projects (Yegor Bugayenko). Lead full-cycle projects from architecture to Kubernetes deployment.",
     s_skills:     "Technical Stack",
     l_backend:    "Backend:",
     l_frontend:   "Frontend:",
@@ -146,6 +148,8 @@
     oss_libs:     "Libraries & Tools",
     oss_tools:    "Dev Tools & Standards",
     oss_sys:      "Systems & Low-level",
+    lib_nav:      "Enterprise-grade navigation library for Yew with automatic active-state detection",
+    lib_nav_awd:  "KaiCode 2026 — 1st place out of 153 projects",
     lib_tg:       "Type-safe Rust wrapper for the Telegram Web Apps API",
     lib_sql:      "Static SQL analysis + LLM optimization; SARIF output, CI/CD-ready",
     lib_ent:      "Derive macro: generates DTO, repositories, SQL, REST and OpenAPI",
@@ -159,7 +163,7 @@
     sys_cstr:     "Safe zero-copy wrapper for passing strings to C FFI (char**)",
     sys_logi:     "Full Linux driver and configurator for Logitech MX mice",
     contrib_lbl:  "Community Contributions:",
-    contrib_txt:  "HyDE Project — Maintainer (Rice Team), Dracula and One Dark themes in the official gallery. Zerocracy / Objectionary — paid contributions to sodg.rs and phie (Yegor Bugayenko).",
+    contrib_txt:  "happy-dom (4.5k ★) — pluggable canvas rendering (adapter pattern) merged into core, closing a feature request open since 2021. HyDE Project — Maintainer (Rice Team), Dracula and One Dark themes in the official gallery. Zerocracy / Objectionary — paid contributions to sodg.rs and phie (Yegor Bugayenko).",
     s_edu:        "Education & Languages",
     edu_name:     "VF RTA — Faculty of Law",
     edu_detail:   "incomplete higher education, 2013",
@@ -175,7 +179,7 @@
     role:         "Kỹ sư phần mềm",
     location:     "Việt Nam · Làm việc từ xa",
     s_about:      "Giới thiệu",
-    about:        "Lập trình viên Fullstack tập trung vào Rust và các hệ thống tải cao. 4+ năm kinh nghiệm thương mại trong backend, ứng dụng web và giải pháp blockchain. Tác giả các thư viện mã nguồn mở với tổng cộng hơn 50.000 lượt tải trên crates.io. Maintainer tại HyDE Project. Đóng góp cho các dự án Zerocracy (Yegor Bugayenko). Quản lý dự án toàn chu kỳ từ kiến trúc đến triển khai Kubernetes.",
+    about:        "Lập trình viên Fullstack tập trung vào Rust và các hệ thống tải cao. 4+ năm kinh nghiệm thương mại trong backend, ứng dụng web và giải pháp blockchain. Quán quân lễ hội mã nguồn mở KaiCode 2026 (giải nhất trong 153 dự án). Tác giả các thư viện mã nguồn mở với tổng cộng hơn 50.000 lượt tải trên crates.io. Maintainer tại HyDE Project. Đóng góp cho các dự án Zerocracy (Yegor Bugayenko). Quản lý dự án toàn chu kỳ từ kiến trúc đến triển khai Kubernetes.",
     s_skills:     "Công nghệ",
     l_backend:    "Backend:",
     l_frontend:   "Frontend:",
@@ -219,6 +223,8 @@
     oss_libs:     "Thư viện & Công cụ",
     oss_tools:    "Công cụ phát triển & Tiêu chuẩn",
     oss_sys:      "Hệ thống & Cấp thấp",
+    lib_nav:      "Thư viện điều hướng enterprise-grade cho Yew, tự động phát hiện trạng thái active",
+    lib_nav_awd:  "KaiCode 2026 — giải nhất trong 153 dự án",
     lib_tg:       "Wrapper Rust type-safe cho Telegram Web Apps API",
     lib_sql:      "Phân tích SQL tĩnh + tối ưu hóa LLM; SARIF output, CI/CD-ready",
     lib_ent:      "Derive macro: tạo DTO, repository, SQL, REST và OpenAPI",
@@ -232,7 +238,7 @@
     sys_cstr:     "Wrapper zero-copy an toàn để truyền chuỗi vào C FFI (char**)",
     sys_logi:     "Driver Linux đầy đủ và công cụ cấu hình cho chuột Logitech MX",
     contrib_lbl:  "Đóng góp cộng đồng:",
-    contrib_txt:  "HyDE Project — Maintainer (Rice Team), theme Dracula và One Dark trong bộ sưu tập chính thức. Zerocracy / Objectionary — đóng góp có thù lao vào sodg.rs và phie (Yegor Bugayenko).",
+    contrib_txt:  "happy-dom (4.5k ★) — canvas rendering theo adapter pattern được merge vào core, đóng feature request từ 2021. HyDE Project — Maintainer (Rice Team), theme Dracula và One Dark trong bộ sưu tập chính thức. Zerocracy / Objectionary — đóng góp có thù lao vào sodg.rs và phie (Yegor Bugayenko).",
     s_edu:        "Học vấn và Ngôn ngữ",
     edu_name:     "VF RTA — Khoa Luật",
     edu_detail:   "chưa hoàn thành đại học, 2013",
@@ -248,7 +254,7 @@
     role:         "소프트웨어 엔지니어",
     location:     "베트남 · 원격 근무",
     s_about:      "소개",
-    about:        "Rust와 고부하 시스템에 중점을 둔 풀스택 개발자. Backend, 웹 애플리케이션, 블록체인 솔루션 분야 4년 이상의 상업적 경험. crates.io에서 총 50,000회 이상 다운로드된 오픈소스 라이브러리 저자. HyDE Project 메인테이너. Zerocracy 프로젝트 기여자 (Yegor Bugayenko). 아키텍처부터 Kubernetes 배포까지 전체 주기 프로젝트 리드.",
+    about:        "Rust와 고부하 시스템에 중점을 둔 풀스택 개발자. Backend, 웹 애플리케이션, 블록체인 솔루션 분야 4년 이상의 상업적 경험. 오픈소스 페스티벌 KaiCode 2026 우승 (153개 프로젝트 중 1위). crates.io에서 총 50,000회 이상 다운로드된 오픈소스 라이브러리 저자. HyDE Project 메인테이너. Zerocracy 프로젝트 기여자 (Yegor Bugayenko). 아키텍처부터 Kubernetes 배포까지 전체 주기 프로젝트 리드.",
     s_skills:     "기술 스택",
     l_backend:    "Backend:",
     l_frontend:   "Frontend:",
@@ -292,6 +298,8 @@
     oss_libs:     "라이브러리 & 도구",
     oss_tools:    "개발 도구 & 표준",
     oss_sys:      "시스템 & 저수준",
+    lib_nav:      "활성 상태 자동 감지 기능을 갖춘 Yew용 엔터프라이즈급 내비게이션 라이브러리",
+    lib_nav_awd:  "KaiCode 2026 — 153개 프로젝트 중 1위",
     lib_tg:       "Telegram Web Apps API용 타입 안전 Rust 래퍼",
     lib_sql:      "정적 SQL 분석 + LLM 최적화; SARIF 출력, CI/CD 지원",
     lib_ent:      "Derive 매크로: DTO, 레포지토리, SQL, REST, OpenAPI 자동 생성",
@@ -305,7 +313,7 @@
     sys_cstr:     "C FFI(char**) 문자열 전달을 위한 안전한 제로카피 래퍼",
     sys_logi:     "Logitech MX 마우스용 완전한 Linux 드라이버 및 설정 도구",
     contrib_lbl:  "커뮤니티 기여:",
-    contrib_txt:  "HyDE Project — Maintainer (Rice Team), 공식 갤러리의 Dracula 및 One Dark 테마. Zerocracy / Objectionary — sodg.rs 및 phie 유료 기여 (Yegor Bugayenko).",
+    contrib_txt:  "happy-dom (4.5k ★) — adapter pattern 기반 canvas 렌더링을 코어에 병합, 2021년 feature request 해결. HyDE Project — Maintainer (Rice Team), 공식 갤러리의 Dracula 및 One Dark 테마. Zerocracy / Objectionary — sodg.rs 및 phie 유료 기여 (Yegor Bugayenko).",
     s_edu:        "학력 및 언어",
     edu_name:     "VF RTA — 법학부",
     edu_detail:   "중퇴, 2013",
@@ -504,6 +512,10 @@
   [
     #text(weight: "bold", fill: dark, size: 9pt)[#t("oss_libs")]
     #v(0.3em)
+
+    #link("https://github.com/RAprogramm/yew-nav-link")[#text(weight: "bold")[yew-nav-link]]
+    #h(0.3em)#text(fill: blue, size: 8pt, weight: "bold")[★ #t("lib_nav_awd")]
+    #v(0.1em)#text(size: 8.8pt)[#t("lib_nav")]#v(0.3em)
 
     #link("https://crates.io/crates/telegram-webapp-sdk")[#text(weight: "bold")[telegram-webapp-sdk]]
     #h(0.3em)#text(fill: blue, size: 8pt)[★ 40]
