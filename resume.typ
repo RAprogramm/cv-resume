@@ -42,6 +42,21 @@
     j_back:       "Backend Developer",
     j_full:       "Fullstack Developer",
     j_back_sol:   "Backend Developer (Solana)",
+    j_ps:         "Инженер по готовности к продакшену (контракт)",
+    ps_desc:      "Приглашённый внешний специалист: довести vibe-coded control plane VPN до продакшена. Проект закрыли; сдал базовую наблюдаемость и миграцию CI/CD.",
+    ps_obs_t:     "Наблюдаемость",
+    ps_obs_1:     "Стек Prometheus, Grafana, Alertmanager, Loki и Alloy: RED-метрики, метрики воркеров, алерты по SLO burn-rate",
+    ps_obs_2:     "Дашборды как генерируемый код; runbook'и и валидация конфигурации",
+    ps_ci_t:      "Миграция CI/CD",
+    ps_ci_1:      "GitHub Actions → GitLab CI: тесты, security-сканы, маршрутизация раннеров, манифесты релизов",
+    ps_ci_2:      "Автодеплой стейджинга, промоушен кандидатов, multi-generation rollback",
+    ps_hard_t:    "Готовность к проду",
+    ps_hard_1:    "Усиленные образы (non-root, Xray из исходников, пиннинг Trivy); readiness-гейт по БД и миграциям",
+    ps_hard_2:    "Ansible-роли деплоя и мониторинга с preflight-проверками",
+    ps_fix_t:     "Исправления вайб-кода",
+    ps_fix_1:     "Мост Remnawave: durable outbox, fail-closed проверка владельца и авторизации",
+    ps_fix_2:     "Корректность аналитики (UTC, query-port); сравнение webhook-секрета за постоянное время",
+    ps_stack:     "Python · FastAPI · Celery · Redis · PostgreSQL · Next.js · Ansible · Prometheus · Grafana · GitLab CI",
     qbd_desc:     "Продуктовая разработка и аутсорс для стартапов. Единственный инженер в команде: backend, frontend, DevOps, CI/CD. Менторинг стажёров (2 набора × 2 человека).",
     dex_title:    "DEX Trading Terminal",
     dex_1:        "Торговля деривативами через Hyperliquid DEX",
@@ -117,6 +132,21 @@
     j_back:       "Backend Developer",
     j_full:       "Fullstack Developer",
     j_back_sol:   "Backend Developer (Solana)",
+    j_ps:         "Production-Readiness Engineer (Contract)",
+    ps_desc:      "Invited as an external specialist to take a vibe-coded VPN control plane to production. The project was discontinued; delivered the observability baseline and the CI/CD migration.",
+    ps_obs_t:     "Observability",
+    ps_obs_1:     "Prometheus, Grafana, Alertmanager, Loki and Alloy stack: RED metrics, worker gauges, SLO burn-rate alerts",
+    ps_obs_2:     "Dashboards as generated code; runbooks and config-validation gates",
+    ps_ci_t:      "CI/CD migration",
+    ps_ci_1:      "GitHub Actions → GitLab CI: tests, security scans, runner routing, release manifests",
+    ps_ci_2:      "Staging auto-deploy, candidate promotion, multi-generation rollback",
+    ps_hard_t:    "Production hardening",
+    ps_hard_1:    "Hardened images (non-root, compiled Xray, Trivy pinning); DB+migration readiness gate",
+    ps_hard_2:    "Ansible deploy and monitoring roles with preflight checks",
+    ps_fix_t:     "Vibe-code fixes",
+    ps_fix_1:     "Remnawave bridge: durable outbox, fail-closed ownership and auth guards",
+    ps_fix_2:     "Analytics correctness (UTC bucketing, query-port split); constant-time webhook checks",
+    ps_stack:     "Python · FastAPI · Celery · Redis · PostgreSQL · Next.js · Ansible · Prometheus · Grafana · GitLab CI",
     qbd_desc:     "Product development and outsourcing for startups. Sole engineer in the stack: backend, frontend, DevOps, CI/CD. Mentoring interns (2 cohorts × 2 people).",
     dex_title:    "DEX Trading Terminal",
     dex_1:        "Derivatives trading via Hyperliquid DEX integration",
@@ -192,6 +222,21 @@
     j_back:       "Lập trình viên Backend",
     j_full:       "Lập trình viên Fullstack",
     j_back_sol:   "Lập trình viên Backend (Solana)",
+    j_ps:         "Kỹ sư sẵn sàng vận hành (Hợp đồng)",
+    ps_desc:      "Chuyên gia bên ngoài được mời đưa control plane VPN (vibe-coded) vào production. Dự án đã dừng; bàn giao nền tảng quan sát và di trú CI/CD.",
+    ps_obs_t:     "Khả năng quan sát",
+    ps_obs_1:     "Stack Prometheus, Grafana, Alertmanager, Loki và Alloy: RED metrics, worker gauge, cảnh báo SLO burn-rate",
+    ps_obs_2:     "Dashboard dạng code sinh tự động; runbook và cổng kiểm cấu hình",
+    ps_ci_t:      "Di trú CI/CD",
+    ps_ci_1:      "GitHub Actions → GitLab CI: test, quét bảo mật, định tuyến runner, manifest phát hành",
+    ps_ci_2:      "Tự động deploy staging, thăng ứng viên, rollback đa thế hệ",
+    ps_hard_t:    "Sẵn sàng production",
+    ps_hard_1:    "Củng cố image (non-root, biên dịch Xray, pin Trivy); cổng readiness theo DB và migration",
+    ps_hard_2:    "Vai trò Ansible deploy và monitoring kèm kiểm tra preflight",
+    ps_fix_t:     "Sửa vibe-code",
+    ps_fix_1:     "Cầu Remnawave: durable outbox, guard fail-closed cho quyền sở hữu và xác thực",
+    ps_fix_2:     "Độ đúng analytics (UTC, tách query-port); so sánh webhook secret thời gian không đổi",
+    ps_stack:     "Python · FastAPI · Celery · Redis · PostgreSQL · Next.js · Ansible · Prometheus · Grafana · GitLab CI",
     qbd_desc:     "Phát triển sản phẩm và gia công phần mềm cho các startup. Kỹ sư duy nhất trong toàn bộ stack: backend, frontend, DevOps, CI/CD. Hướng dẫn thực tập sinh (2 đợt × 2 người).",
     dex_title:    "DEX Trading Terminal",
     dex_1:        "Giao dịch phái sinh qua tích hợp Hyperliquid DEX",
@@ -267,6 +312,21 @@
     j_back:       "백엔드 개발자",
     j_full:       "풀스택 개발자",
     j_back_sol:   "백엔드 개발자 (Solana)",
+    j_ps:         "프로덕션 안정화 엔지니어 (계약직)",
+    ps_desc:      "외부 전문가로 초빙되어 vibe-coded VPN 컨트롤 플레인을 프로덕션으로 이관. 프로젝트 종료; 관측성 기반과 CI/CD 마이그레이션 완료.",
+    ps_obs_t:     "관측성",
+    ps_obs_1:     "Prometheus, Grafana, Alertmanager, Loki, Alloy 스택: RED 메트릭, 워커 게이지, SLO burn-rate 알림",
+    ps_obs_2:     "대시보드를 생성 코드로; 런북과 구성 검증 게이트",
+    ps_ci_t:      "CI/CD 마이그레이션",
+    ps_ci_1:      "GitHub Actions → GitLab CI: 테스트, 보안 스캔, 러너 라우팅, 릴리스 매니페스트",
+    ps_ci_2:      "스테이징 자동 배포, 후보 승격, 다중 세대 롤백",
+    ps_hard_t:    "프로덕션 준비",
+    ps_hard_1:    "이미지 강화(non-root, 소스에서 Xray 컴파일, Trivy 고정); DB+마이그레이션 준비 게이트",
+    ps_hard_2:    "preflight 검사를 갖춘 Ansible 배포·모니터링 역할",
+    ps_fix_t:     "바이브 코드 수정",
+    ps_fix_1:     "Remnawave 브리지: durable outbox, 소유권·인증 fail-closed 가드",
+    ps_fix_2:     "분석 정확성(UTC, query-port 분리); 상수 시간 webhook 시크릿 검증",
+    ps_stack:     "Python · FastAPI · Celery · Redis · PostgreSQL · Next.js · Ansible · Prometheus · Grafana · GitLab CI",
     qbd_desc:     "스타트업을 위한 제품 개발 및 외주. 스택 내 유일한 엔지니어: backend, frontend, DevOps, CI/CD. 인턴 멘토링 (2기 × 2명).",
     dex_title:    "DEX 트레이딩 터미널",
     dex_1:        "Hyperliquid DEX 연동을 통한 파생상품 거래",
@@ -425,6 +485,41 @@
 
 #section(t("s_exp"))
 
+#job(t("j_ps"), "Pirate Station VPN", "09/2026 — 10/2026")
+#v(0.2em)
+#text(size: 8.8pt, fill: slate)[#t("ps_desc")]
+#v(0.25em)
+#grid(
+  columns: if ats { (1fr,) } else { (1fr, 1fr) },
+  column-gutter: 10pt,
+  row-gutter: 0.4em,
+  [
+    #text(weight: "bold", size: 9pt)[#t("ps_obs_t")]
+    #bul[#t("ps_obs_1")]
+    #bul[#t("ps_obs_2")]
+  ],
+  [
+    #text(weight: "bold", size: 9pt)[#t("ps_ci_t")]
+    #bul[#t("ps_ci_1")]
+    #bul[#t("ps_ci_2")]
+  ],
+  [
+    #text(weight: "bold", size: 9pt)[#t("ps_hard_t")]
+    #bul[#t("ps_hard_1")]
+    #bul[#t("ps_hard_2")]
+  ],
+  [
+    #text(weight: "bold", size: 9pt)[#t("ps_fix_t")]
+    #bul[#t("ps_fix_1")]
+    #bul[#t("ps_fix_2")]
+  ],
+)
+#v(0.2em)
+#text(size: 8.5pt, fill: slate, style: "italic")[
+  #t("stack_lbl") #t("ps_stack")
+]
+
+#v(0.55em)
 #job(t("j_lead"), "QBD", "10/2024 — 01/2026")
 #v(0.2em)
 #text(size: 8.8pt, fill: slate)[#t("qbd_desc")]
