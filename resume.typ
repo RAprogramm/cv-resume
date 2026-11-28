@@ -43,7 +43,7 @@
     j_full:       "Fullstack Developer",
     j_back_sol:   "Backend Developer (Solana)",
     j_ps:         "Инженер по готовности к продакшену (контракт)",
-    ps_desc:      "Приглашённый внешний специалист: довести vibe-coded control plane VPN до продакшена. Проект закрыли; сдал базовую наблюдаемость и миграцию CI/CD.",
+    ps_desc:      "Приглашённый внешний специалист: довести control plane Cuba Libre VPN до продакшена. Проект закрыли; сдал базовую наблюдаемость и миграцию CI/CD.",
     ps_obs_t:     "Наблюдаемость",
     ps_obs_1:     "Стек Prometheus, Grafana, Alertmanager, Loki и Alloy: RED-метрики, метрики воркеров, алерты по SLO burn-rate",
     ps_obs_2:     "Дашборды как генерируемый код; runbook'и и валидация конфигурации",
@@ -133,7 +133,7 @@
     j_full:       "Fullstack Developer",
     j_back_sol:   "Backend Developer (Solana)",
     j_ps:         "Production-Readiness Engineer (Contract)",
-    ps_desc:      "Invited as an external specialist to take a vibe-coded VPN control plane to production. The project was discontinued; delivered the observability baseline and the CI/CD migration.",
+    ps_desc:      "Invited as an external specialist to take the Cuba Libre VPN control plane to production. The project was discontinued; delivered the observability baseline and the CI/CD migration.",
     ps_obs_t:     "Observability",
     ps_obs_1:     "Prometheus, Grafana, Alertmanager, Loki and Alloy stack: RED metrics, worker gauges, SLO burn-rate alerts",
     ps_obs_2:     "Dashboards as generated code; runbooks and config-validation gates",
@@ -223,7 +223,7 @@
     j_full:       "Lập trình viên Fullstack",
     j_back_sol:   "Lập trình viên Backend (Solana)",
     j_ps:         "Kỹ sư sẵn sàng vận hành (Hợp đồng)",
-    ps_desc:      "Chuyên gia bên ngoài được mời đưa control plane VPN (vibe-coded) vào production. Dự án đã dừng; bàn giao nền tảng quan sát và di trú CI/CD.",
+    ps_desc:      "Chuyên gia bên ngoài được mời đưa control plane Cuba Libre VPN vào production. Dự án đã dừng; bàn giao nền tảng quan sát và di trú CI/CD.",
     ps_obs_t:     "Khả năng quan sát",
     ps_obs_1:     "Stack Prometheus, Grafana, Alertmanager, Loki và Alloy: RED metrics, worker gauge, cảnh báo SLO burn-rate",
     ps_obs_2:     "Dashboard dạng code sinh tự động; runbook và cổng kiểm cấu hình",
@@ -313,7 +313,7 @@
     j_full:       "풀스택 개발자",
     j_back_sol:   "백엔드 개발자 (Solana)",
     j_ps:         "프로덕션 안정화 엔지니어 (계약직)",
-    ps_desc:      "외부 전문가로 초빙되어 vibe-coded VPN 컨트롤 플레인을 프로덕션으로 이관. 프로젝트 종료; 관측성 기반과 CI/CD 마이그레이션 완료.",
+    ps_desc:      "외부 전문가로 초빙되어 Cuba Libre VPN 컨트롤 플레인을 프로덕션으로 이관. 프로젝트 종료; 관측성 기반과 CI/CD 마이그레이션 완료.",
     ps_obs_t:     "관측성",
     ps_obs_1:     "Prometheus, Grafana, Alertmanager, Loki, Alloy 스택: RED 메트릭, 워커 게이지, SLO burn-rate 알림",
     ps_obs_2:     "대시보드를 생성 코드로; 런북과 구성 검증 게이트",
@@ -485,7 +485,7 @@
 
 #section(t("s_exp"))
 
-#job(t("j_ps"), "Pirate Station VPN", "09/2026 — 10/2026")
+#job(t("j_ps"), "CONNECTVIBE IT", "09/2026 — 10/2026")
 #v(0.2em)
 #text(size: 8.8pt, fill: slate)[#t("ps_desc")]
 #v(0.25em)
